@@ -7,7 +7,7 @@ define setMaxThreadNum
 	sed -i "/^#define ENC_MAX_THREAD_NUM/c #define ENC_MAX_THREAD_NUM  $$max_thread_num" app/ecalls/EnclaveQueue.h; \
 	sed -i "/^#define ENC_MAX_THREAD_NUM/c #define ENC_MAX_THREAD_NUM  $$max_thread_num" $$enclave_para; \
 	cat $$app_para | grep "#define VERSION" | awk '{print $$3}' | sed 's/"//g' > ../VERSION; \
-	sworker_version=$$(cat $$enclave_para | grep "#define SWORKER_VERSION" | awk '{print $$3}' | sed 's/"//g'); \
+	sworker_version=$$(cat $$enclave_para | grep "#define XSTORAGE_VERSION" | awk '{print $$3}' | sed 's/"//g'); \
 	echo "XSTORAGE=$$sworker_version" >> ../VERSION
 endef
 

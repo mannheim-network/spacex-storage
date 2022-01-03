@@ -41,7 +41,7 @@ int SGX_CDECL main(int argc, char *argv[])
         else if (strcmp(argv[i], "-v") == 0 || strcmp(argv[i], "--version") == 0)
         {
             printf("Release version: %s\
-                  \nSWorker     version: %s\n", VERSION, SWORKER_VERSION);
+                  \nSWorker     version: %s\n", VERSION, XSTORAGE_VERSION);
             return 0;
         }
         else if (strcmp(argv[i], "--use-sysdisk") == 0)

@@ -298,7 +298,7 @@ void ApiHandler::http_handler(beast::string_view /*doc_root*/,
                 json::JSON id_json = json::JSON::Load_unsafe(id_info_str);
                 id_json["account"] = p_config->chain_address;
                 id_json["version"] = VERSION;
-                id_json["sworker_version"] = SWORKER_VERSION;
+                id_json["sworker_version"] = XSTORAGE_VERSION;
                 res.body() = id_json.dump();
                 res.result(200);
             }

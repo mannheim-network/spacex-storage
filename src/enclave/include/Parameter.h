@@ -10,7 +10,7 @@ typedef spacex_status_t (*ecall_store2_f)(const uint8_t *u, size_t s);
 typedef sgx_status_t (*ocall_get2_f)(spacex_status_t *status, uint8_t *u, size_t s, size_t *rs);
 
 // For all
-#define SWORKER_VERSION "1.1.1"
+#define XSTORAGE_VERSION "1.1.1"
 #define LEAF_SEPARATOR  "+leaf+"
 #define EMPTY_BLOCK_CID "QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n"
 #define EMPTY_BLOCK_FLAG "empty"
