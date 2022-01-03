@@ -50,7 +50,7 @@ function installAPP()
     else
         proddesc="in dev mode"
     fi
-    setTimeWait "$(verbose INFO "Building and installing sworker application($proddesc)..." h)" $SYNCFILE &
+    setTimeWait "$(verbose INFO "Building and installing xstorage application($proddesc)..." h)" $SYNCFILE &
     toKillPID[${#toKillPID[*]}]=$!
     make $sgx_build_mode SIGN_CMD=$SIGN_CMD_FILE -j$((coreNum*2)) &>$ERRFILE
     checkRes $? "quit" "success" "$SYNCFILE"

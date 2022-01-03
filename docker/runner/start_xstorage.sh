@@ -6,7 +6,7 @@ spacexstoragedir=$spacexdir/spacex-storage/$version
 spacex_env_file=$spacexstoragedir/etc/environment
 inteldir=/opt/intel
 
-echo "Starting curst sworker $version"
+echo "Starting spacex storage $version"
 source $spacex_env_file
 
 wait_time=10
