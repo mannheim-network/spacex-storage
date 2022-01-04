@@ -6,7 +6,7 @@
 
 #define VERSION "1.1.1"
 
-#define SPACEX_INST_DIR      "/opt/spacex/spacex-sworker/" VERSION
+#define SPACEX_INST_DIR      "/opt/spacex/spacex-storage/" VERSION
 #define ENCLAVE_FILE_PATH   SPACEX_INST_DIR "/etc/enclave.signed.so"
 #define SGX_WL_FILE_PATH    SPACEX_INST_DIR "/etc/sgx_white_list_cert.bin"
 

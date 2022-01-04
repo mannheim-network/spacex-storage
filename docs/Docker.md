@@ -37,3 +37,9 @@
   ```
   sudo ./docker/build.sh
   ```
+
+## Run
+
+```
+docker-compose -f ./docker/docker-compose.yaml up -d spacex-storage
+```

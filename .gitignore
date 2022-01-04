@@ -43,3 +43,4 @@ src/.config_HW_RELEASE_x64
 src/.config_HW_DEBUG_x64
 src/spacex-storage
 err.log
+.config.json
