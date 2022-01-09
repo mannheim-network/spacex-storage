@@ -239,7 +239,7 @@ void ApiHandler::http_handler(beast::string_view /*doc_root*/,
             goto getcleanup;
         }
 
-        // ----- Stop sworker ----- //
+        // ----- Stop storage ----- //
         cur_path = urlendpoint.base + "/stop";
         if (req_route.size() == cur_path.size() && req_route.compare(cur_path) == 0)
         {
@@ -254,7 +254,7 @@ void ApiHandler::http_handler(beast::string_view /*doc_root*/,
             }
             else
             {
-                ret_info = "Stop sworker successfully.";
+                ret_info = "Stop storage successfully.";
                 ret_code = 200;
                 // We just need to wait workreport and storing metadata, and then can stop
                 while (eq->has_stopping_block_task())
@@ -298,7 +298,7 @@ void ApiHandler::http_handler(beast::string_view /*doc_root*/,
                 json::JSON id_json = json::JSON::Load_unsafe(id_info_str);
                 id_json["account"] = p_config->chain_address;
                 id_json["version"] = VERSION;
-                id_json["sworker_version"] = XSTORAGE_VERSION;
+                id_json["xstorage_version"] = XSTORAGE_VERSION;
                 res.body() = id_json.dump();
                 res.result(200);
             }
@@ -487,7 +487,7 @@ void ApiHandler::http_handler(beast::string_view /*doc_root*/,
             goto getcleanup;
         }
 
-        // ----- Inform current sworker upgrade result ----- //
+        // ----- Inform current storage upgrade result ----- //
         cur_path = urlendpoint.base + "/upgrade/complete";
         if (req_route.size() == cur_path.size() && req_route.compare(cur_path) == 0)
         {
@@ -775,7 +775,7 @@ void ApiHandler::http_handler(beast::string_view /*doc_root*/,
                 }
                 else if (SPACEX_STORAGE_NEW_FILE_NOTFOUND == spacex_status)
                 {
-                    ret_info = "File '" + cid + "' is not existed in sworker";
+                    ret_info = "File '" + cid + "' is not existed in storage";
                     ret_code = 404;
                 }
                 else if (SPACEX_UPGRADE_IS_UPGRADING == spacex_status)

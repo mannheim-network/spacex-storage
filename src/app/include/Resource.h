@@ -42,10 +42,10 @@ const uint32_t UPGRADE_COMPLETE_TRYOUT = BLOCK_INTERVAL * 10;
 #define WL_DISK_UUID "disk_uuid"
 
 // For srd
-#define DISK_SWORKER_DIR "/sworker"
-#define DISK_SRD_DIR    DISK_SWORKER_DIR "/srd"
-#define DISK_FILE_DIR    DISK_SWORKER_DIR "/files"
-#define DISK_UUID_FILE  DISK_SWORKER_DIR "/uuid"
+#define DISK_STORAGE_DIR "/storage"
+#define DISK_SRD_DIR    DISK_STORAGE_DIR "/srd"
+#define DISK_FILE_DIR    DISK_STORAGE_DIR "/files"
+#define DISK_UUID_FILE  DISK_STORAGE_DIR "/uuid"
 #define SRD_THREAD_NUM 8
 
 // For print

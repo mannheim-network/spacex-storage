@@ -306,7 +306,7 @@ spacex_status_t entry_network()
         case SPACEX_SIGN_PUBKEY_FAILED:
             p_log->err("Sign public key failed!!\n");
             break;
-        case SPACEX_SWORKER_UPGRADE_NEEDED:
+        case SPACEX_STORAGE_UPGRADE_NEEDED:
             p_log->err("Sworker upgrade needed!!\n");
             break;
         default:

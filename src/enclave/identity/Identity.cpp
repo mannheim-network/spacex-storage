@@ -531,7 +531,7 @@ spacex_status_t id_verify_and_upload_identity(char **IASReport, size_t size)
         return SPACEX_SIGN_PUBKEY_FAILED;
     }
     
-    // Get sworker identity and store it outside of sworker
+    // Get storage identity and store it outside of storage
     json::JSON id_json;
     id_json[IAS_CERT] = certchain_1;
     id_json[IAS_SIG] = ias_sig;
@@ -672,7 +672,7 @@ spacex_status_t id_store_metadata()
     // ----- Store metadata ----- //
     std::vector<uint8_t> meta_buffer;
     // Append private data tag
-    vector_end_insert(meta_buffer, reinterpret_cast<const uint8_t *>(SWORKER_PRIVATE_TAG), strlen(SWORKER_PRIVATE_TAG));
+    vector_end_insert(meta_buffer, reinterpret_cast<const uint8_t *>(STORAGE_PRIVATE_TAG), strlen(STORAGE_PRIVATE_TAG));
 
     std::vector<uint8_t> meta_data;
     do
@@ -732,7 +732,7 @@ spacex_status_t id_restore_metadata()
         return SPACEX_UNEXPECTED_ERROR;
     }
     log_debug("Get metadata successfully!\n");
-    meta_json = json::JSON::Load(&spacex_status, p_data + strlen(SWORKER_PRIVATE_TAG), data_len);
+    meta_json = json::JSON::Load(&spacex_status, p_data + strlen(STORAGE_PRIVATE_TAG), data_len);
     if (SPACEX_SUCCESS != spacex_status)
     {
         log_err("Parse metadata failed! Error code:%lx\n", spacex_status);

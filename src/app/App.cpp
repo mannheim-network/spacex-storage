@@ -75,7 +75,7 @@ show_help:
     printf("           -h, --help: help information. \n");
     printf("           -c, --config: required, indicate configure file path, followed by configure file path. Like: '--config Config.json'\n");
     printf("               If no file provided, default path is %s. \n", config_file_path.c_str());
-    printf("           -v, --version: show whole version and sworker version. \n");
+    printf("           -v, --version: show whole version and storage version. \n");
     printf("           --offline: add this flag, program will not interact with the chain. \n");
     printf("           --debug: add this flag, program will output debug logs. \n");
     printf("           --upgrade: used to upgrade.\n");

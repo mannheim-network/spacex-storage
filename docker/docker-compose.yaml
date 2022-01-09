@@ -6,11 +6,10 @@ services:
     devices:
       - '/dev/isgx:/dev/isgx'
     volumes:
-      - '/opt/spacex/data/xstorage:/opt/spacex/data/xstorage'
-      - '/opt/spacex/disks:/opt/spacex/disks'
-      - './xstorage:/config'
+      - '/opt/mannheim-network/data/xstorage:/opt/mannheim-network/data/xstorage'
+      - '/opt/mannheim-network/disks:/opt/mannheim-network/disks'
     environment:
-      ARGS: '-c /config/xstorage_config.json $EX_XSTORAGE_ARGS'
+      ARGS: '$EX_XSTORAGE_ARGS'
     logging:
       driver: json-file
       options:

@@ -33,7 +33,14 @@
   ```
 
 ## Build
-- Build spacex storage docker.
+- Build spacex-storage-env docker.
+
+  ```
+  sudo ./docker/build_env.sh
+  ```
+
+- Build spacex-storage docker.
+
   ```
   sudo ./docker/build.sh
   ```

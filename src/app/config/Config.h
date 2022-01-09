@@ -37,7 +37,7 @@ class Config
 {
 public:
     // base information
-    std::string base_path;              /* sworker base path */
+    std::string base_path;              /* storage base path */
     std::string db_path;                /* DB path */
     std::string base_url;               /* External API base url */
     

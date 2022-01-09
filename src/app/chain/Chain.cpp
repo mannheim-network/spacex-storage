@@ -297,8 +297,8 @@ bool Chain::wait_for_running(void)
 }
 
 /**
- * @description: post sworker identity to chain chain
- * @param identity -> sworker identity
+ * @description: post storage identity to chain chain
+ * @param identity -> storage identity
  * @return: success or fail
  */
 bool Chain::post_sworker_identity(std::string identity)
@@ -317,7 +317,7 @@ bool Chain::post_sworker_identity(std::string identity)
         json::JSON obj = json::JSON::Load(&spacex_status, identity);
         if (SPACEX_SUCCESS != spacex_status)
         {
-            p_log->err("Parse sworker identity failed! Error code:%lx\n", spacex_status);
+            p_log->err("Parse storage identity failed! Error code:%lx\n", spacex_status);
             return false;
         }
         obj["backup"] = this->backup;
@@ -344,8 +344,8 @@ bool Chain::post_sworker_identity(std::string identity)
 }
 
 /**
- * @description: post sworker work report to chain
- * @param work_report -> sworker work report
+ * @description: post storage work report to chain
+ * @param work_report -> storage work report
  * @return: success or fail
  */
 bool Chain::post_sworker_work_report(std::string work_report)
@@ -364,7 +364,7 @@ bool Chain::post_sworker_work_report(std::string work_report)
         json::JSON obj = json::JSON::Load(&spacex_status, work_report);
         if (SPACEX_SUCCESS != spacex_status)
         {
-            p_log->err("Parse sworker workreport failed! Error code:%lx\n", spacex_status);
+            p_log->err("Parse storage workreport failed! Error code:%lx\n", spacex_status);
             return false;
         }
         obj["backup"] = this->backup;
@@ -386,12 +386,12 @@ bool Chain::post_sworker_work_report(std::string work_report)
             } 
             else if (msg == "swork.IllegalReporter")
             {
-                p_log->err("Chain error: %s. The current account does not match the original account, please stop sworker and reconfigure! SF:WRE\n", res.body().c_str());
+                p_log->err("Chain error: %s. The current account does not match the original account, please stop storage and reconfigure! SF:WRE\n", res.body().c_str());
                 return false;
             }
             else if (msg == "swork.OutdatedReporter")
             {
-                p_log->err("Chain error: %s. The current sworker has expired, please shovel the data and run a new sworker! SF:WRE\n", res.body().c_str());
+                p_log->err("Chain error: %s. The current storage has expired, please shovel the data and run a new storage! SF:WRE\n", res.body().c_str());
                 return false;
             }
             else if (msg == "swork.IllegalWorkReportSig" || msg == "swork.IllegalFilesTransition" || msg == "swork.ABUpgradeFailed")

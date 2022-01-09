@@ -161,7 +161,7 @@ spacex_status_t ocall_srd_change(long change)
 }
 
 /**
- * @description: Store sworker identity
+ * @description: Store storage identity
  * @param id (in) -> Pointer to identity
  * @return: Upload result
  */

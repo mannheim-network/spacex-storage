@@ -33,7 +33,7 @@ namespace json
 }
 
 // Data tag to enclave only data
-#define SWORKER_PRIVATE_TAG  "&+SPACEXSWORKERPRIVATE+&"
+#define STORAGE_PRIVATE_TAG  "&+SPACEXSTORAGEPRIVATE+&"
 
 /* The size of a srd disk leaf file */
 #define SRD_RAND_DATA_LENGTH 1048576

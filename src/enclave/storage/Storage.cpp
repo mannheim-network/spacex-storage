@@ -464,7 +464,7 @@ spacex_status_t storage_unseal_file(const char *path,
     Defer def_decrypted_data([&p_unsealed_data](void) { free(p_unsealed_data); });
 
     // Check if data is private data
-    if (memcmp(p_unsealed_data, SWORKER_PRIVATE_TAG, strlen(SWORKER_PRIVATE_TAG)) == 0)
+    if (memcmp(p_unsealed_data, STORAGE_PRIVATE_TAG, strlen(STORAGE_PRIVATE_TAG)) == 0)
     {
         return SPACEX_MALWARE_DATA_BLOCK;
     }
