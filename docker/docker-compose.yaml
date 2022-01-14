@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+  spacex-storage:
+    image: 'mannheim-network/spacex-storage:1.1.1'
+    network_mode: host
+    devices:
+      - '/dev/isgx:/dev/isgx'
+    volumes:
+      - '/opt/mannheim-network/data/xstorage:/opt/mannheim-network/data/xstorage'
+      - '/opt/mannheim-network/disks:/opt/mannheim-network/disks'
+    environment:
+      ARGS: '$EX_XSTORAGE_ARGS'
+    logging:
+      driver: json-file
+      options:
+        max-size: 500m
+    container_name: spacex-storage
