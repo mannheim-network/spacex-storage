@@ -24,8 +24,8 @@ function checkOldSpaceXStorage()
 
 function installAPP()
 {
-    # Create sworker directory
-    verbose INFO "Creating sworker directory related..." h
+    # Create storage directory
+    verbose INFO "Creating storage directory related..." h
     local res=0
     mkdir -p $spacexdir
     res=$(($?|$res))
