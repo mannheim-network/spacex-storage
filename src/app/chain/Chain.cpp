@@ -150,7 +150,7 @@ std::string Chain::get_swork_code()
         return "04579f4102301d39f68032446b63fc0cede4817cf099312a0c397a760651af98";
     }
 
-    std::string url = this->url + "/swork/code";
+    std::string url = this->url + "/storage/code";
     http::response<http::string_body> res = pri_chain_client->Get(url.c_str());
     std::string res_body = res.body();
     if ((int)res.result() == 200)
@@ -310,7 +310,7 @@ bool Chain::post_sworker_identity(std::string identity)
 
     for (int i = 0; i < 20; i++)
     {
-        std::string path = this->url + "/swork/identity";
+        std::string path = this->url + "/storage/identity";
         ApiHeaders headers = {{"password", this->password}, {"Content-Type", "application/json"}};
 
         spacex_status_t spacex_status = SPACEX_SUCCESS;
@@ -357,7 +357,7 @@ bool Chain::post_sworker_work_report(std::string work_report)
 
     for (int i = 0; i < 20; i++)
     {
-        std::string path = this->url + "/swork/workreport";
+        std::string path = this->url + "/storage/workreport";
         ApiHeaders headers = {{"password", this->password}, {"Content-Type", "application/json"}};
 
         spacex_status_t spacex_status = SPACEX_SUCCESS;

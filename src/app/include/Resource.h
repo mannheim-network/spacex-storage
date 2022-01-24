@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "Parameter.h"
 
-#define VERSION "1.1.1"
+#define VERSION "1.1.0"
 
 #define SPACEX_INST_DIR      "/opt/spacex/spacex-storage/" VERSION
 #define ENCLAVE_FILE_PATH   SPACEX_INST_DIR "/etc/enclave.signed.so"

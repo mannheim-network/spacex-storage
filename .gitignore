@@ -44,3 +44,5 @@ src/.config_HW_DEBUG_x64
 src/spacex-storage
 err.log
 .config.json
+node_modules/
+yarn.lock

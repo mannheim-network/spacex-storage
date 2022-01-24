@@ -1,5 +1,5 @@
 # spacex storage image
-FROM mannheim-network/spacex-storage-env:1.1.1
+FROM mannheim-network/spacex-storage-env:1.1.0
 
 ARG BUILD_MODE
 
